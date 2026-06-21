@@ -1,6 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+
+const PRICES_API = 'https://functions.poehali.dev/8bf22f20-15fa-4336-b6e9-cb34adf8cc18';
+
+interface PriceRow { group_name: string; time_label: string; price: string; }
+
+function groupPrices(rows: PriceRow[]) {
+  const map: Record<string, { time: string; price: string }[]> = {};
+  rows.forEach((r) => {
+    if (!map[r.group_name]) map[r.group_name] = [];
+    map[r.group_name].push({ time: r.time_label, price: r.price });
+  });
+  return Object.entries(map).map(([group, rows]) => ({ group, rows }));
+}
 
 const HERO_IMG = 'https://cdn.poehali.dev/projects/ac8bdc5e-f7ca-4434-866b-0c2f64b4b59d/files/6970e980-998f-4f0a-ae27-895b52721e33.jpg';
 const ABOUT_IMG = 'https://cdn.poehali.dev/projects/ac8bdc5e-f7ca-4434-866b-0c2f64b4b59d/files/41af24e2-3236-41a6-a998-a40f6d7a98cd.jpg';
@@ -23,38 +36,16 @@ const services = [
   { icon: 'Leaf', title: 'Тайский массаж', text: 'Древняя техника растяжки и акупрессуры — восстанавливает энергию, гибкость и внутренний баланс.' },
 ];
 
-const priceGroups = [
-  {
-    group: 'Расслабляющий массаж',
-    rows: [
-      { time: '30 мин', price: '25 руб.' },
-      { time: '60 мин', price: '50 руб.' },
-      { time: '90 мин', price: '70 руб.' },
-    ],
-  },
-  {
-    group: 'Антицеллюлитный',
-    rows: [
-      { time: '60 мин', price: '60 руб.' },
-      { time: '60 мин + обёртывание', price: '110 руб.' },
-    ],
-  },
-  {
-    group: 'Баночный массаж',
-    rows: [
-      { time: '60 мин', price: '50 руб.' },
-    ],
-  },
-  {
-    group: 'Массаж лица',
-    rows: [
-      { time: '15 мин', price: '20 руб.' },
-    ],
-  },
-];
-
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [priceGroups, setPriceGroups] = useState<{ group: string; rows: { time: string; price: string }[] }[]>([]);
+
+  useEffect(() => {
+    fetch(PRICES_API)
+      .then((r) => r.json())
+      .then((data) => setPriceGroups(groupPrices(data)))
+      .catch(() => {});
+  }, []);
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
