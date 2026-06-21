@@ -181,7 +181,7 @@ const Index = () => {
           <div className="grid sm:grid-cols-3 gap-6 mb-12">
             {[
               { icon: 'Phone', label: '+375 (25) 626-39-18', sub: 'Звонок и WhatsApp', href: 'tel:+375256263918' },
-              { icon: 'MapPin', label: 'Москва, ул. Тихая, 12', sub: 'Уютный кабинет', href: undefined },
+              { icon: 'MapPin', label: 'г. Речица, ул. Советская, д. 106', sub: 'Уютный кабинет', href: undefined },
               { icon: 'Clock', label: 'Пн–Вс · 9:00–21:00', sub: 'По записи', href: undefined },
             ].map((c) => {
               const Wrapper = c.href ? 'a' : 'div';
