@@ -107,14 +107,14 @@ const Index = () => {
             <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-4">Обо мне</p>
             <h2 className="font-display text-4xl md:text-5xl text-primary mb-6">Alexandr_by_massage</h2>
             <p className="text-muted-foreground text-lg mb-5">
-              Дипломированный массажист с опытом более 8 лет. Я уверена: настоящее здоровье начинается с расслабления и внимания к телу.
+              Дипломированный массажист с опытом более 20 лет. Я уверена: настоящее здоровье начинается с расслабления и внимания к телу.
             </p>
             <p className="text-muted-foreground text-lg mb-8">
               В работе использую натуральные масла и индивидуальный подход к каждому гостю. Моя цель — чтобы после сеанса вы чувствовали себя обновлённым.
             </p>
             <div className="grid grid-cols-3 gap-6">
               {[
-                { n: '8+', t: 'лет опыта' },
+                { n: '20+', t: 'лет опыта' },
                 { n: '1200+', t: 'довольных гостей' },
                 { n: '6', t: 'видов массажа' },
               ].map((s) => (
