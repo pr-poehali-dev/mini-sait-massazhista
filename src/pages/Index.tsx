@@ -119,8 +119,8 @@ const Index = () => {
                 { n: '♻', t: 'постоянные клиенты' },
               ].map((s) => (
                 <div key={s.t}>
-                  <div className="font-display text-4xl text-primary">{s.n}</div>
-                  <div className="text-sm text-muted-foreground">{s.t}</div>
+                  <div className="font-display text-3xl text-primary">{s.n}</div>
+                  <div className="text-xs text-muted-foreground">{s.t}</div>
                 </div>
               ))}
             </div>
