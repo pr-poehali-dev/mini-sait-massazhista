@@ -101,7 +101,7 @@ const Index = () => {
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="relative order-2 md:order-1">
             <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] -rotate-3" />
-            <img src={ABOUT_IMG} alt="Руки массажиста" className="relative rounded-[2rem] shadow-lg object-cover w-full h-[420px] max-w-[340px] mx-auto" />
+            <img src={ABOUT_IMG} alt="Руки массажиста" className="relative rounded-[2rem] shadow-lg object-cover w-full h-[420px]" />
           </div>
           <div className="order-1 md:order-2">
             <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-4">Обо мне</p>
@@ -119,8 +119,8 @@ const Index = () => {
                 { n: '♻', t: 'постоянные клиенты' },
               ].map((s) => (
                 <div key={s.t}>
-                  <div className="font-display text-3xl text-primary">{s.n}</div>
-                  <div className="text-xs text-muted-foreground">{s.t}</div>
+                  <div className="font-display text-4xl text-primary">{s.n}</div>
+                  <div className="text-sm text-muted-foreground">{s.t}</div>
                 </div>
               ))}
             </div>
