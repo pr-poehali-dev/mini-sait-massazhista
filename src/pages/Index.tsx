@@ -74,7 +74,7 @@ const Index = () => {
       <section id="home" className="relative pt-16 min-h-screen flex items-center">
         <div className="container grid md:grid-cols-2 gap-12 items-center py-16">
           <div className="animate-fade-up">
-            <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-6">Студия здоровья и спокойствия</p>
+            <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-6">Место здоровья и спокойствия</p>
             <h1 className="font-display text-5xl md:text-7xl leading-[1.05] text-primary mb-6">
               Прикосновение,<br />которое лечит
             </h1>
@@ -222,7 +222,7 @@ const Index = () => {
       <footer className="py-10 border-t border-border bg-secondary/40">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <span className="font-display text-lg text-primary">Alexandr_by_massage</span>
-          <span>© 2026 · Студия здоровья и спокойствия</span>
+          <span>© 2026 · Место здоровья и спокойствия</span>
         </div>
       </footer>
     </div>
