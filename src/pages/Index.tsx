@@ -79,7 +79,7 @@ const Index = () => {
               Прикосновение,<br />которое лечит
             </h1>
             <p className="text-muted-foreground text-lg max-w-md mb-10">
-              Профессиональный массаж в атмосфере тишины и заботы. Верните телу гармонию, а мыслям — лёгкость.
+              Качественный массаж в атмосфере тишины и заботы. Верните телу гармонию, а мыслям — лёгкость.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" onClick={() => scrollTo('contacts')} className="rounded-full px-8">
