@@ -202,7 +202,7 @@ const Index = () => {
           </div>
           <div className="flex justify-center gap-4">
             <Button size="lg" asChild className="rounded-full px-8">
-              <a href="https://t.me/your_username" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/Athyu2" target="_blank" rel="noopener noreferrer">
                 <Icon name="Send" size={18} className="mr-2" /> Написать в Telegram
               </a>
             </Button>
