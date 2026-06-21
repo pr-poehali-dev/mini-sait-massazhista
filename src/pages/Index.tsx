@@ -23,15 +23,34 @@ const services = [
   { icon: 'Leaf', title: 'Тайский массаж', text: 'Древняя техника растяжки и акупрессуры — восстанавливает энергию, гибкость и внутренний баланс.' },
 ];
 
-const prices = [
-  { name: 'Расслабляющий массаж', time: '30 мин', price: '25 руб.' },
-  { name: 'Расслабляющий массаж', time: '60 мин', price: '50 руб.' },
-  { name: 'Расслабляющий массаж', time: '90 мин', price: '70 руб.' },
-  { name: 'Антицеллюлитный', time: '60 мин', price: '60 руб.' },
-  { name: 'Антицеллюлитный с обёртыванием', time: '60 мин', price: '110 руб.' },
-  { name: 'Баночный массаж', time: '60 мин', price: '50 руб.' },
-
-  { name: 'Массаж лица', time: '15 мин', price: '20 руб.' },
+const priceGroups = [
+  {
+    group: 'Расслабляющий массаж',
+    rows: [
+      { time: '30 мин', price: '25 руб.' },
+      { time: '60 мин', price: '50 руб.' },
+      { time: '90 мин', price: '70 руб.' },
+    ],
+  },
+  {
+    group: 'Антицеллюлитный',
+    rows: [
+      { time: '60 мин', price: '60 руб.' },
+      { time: '60 мин + обёртывание', price: '110 руб.' },
+    ],
+  },
+  {
+    group: 'Баночный массаж',
+    rows: [
+      { time: '60 мин', price: '50 руб.' },
+    ],
+  },
+  {
+    group: 'Массаж лица',
+    rows: [
+      { time: '15 мин', price: '20 руб.' },
+    ],
+  },
 ];
 
 const Index = () => {
@@ -159,16 +178,31 @@ const Index = () => {
             <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-4">Прайс</p>
             <h2 className="font-display text-4xl md:text-5xl text-primary">Стоимость сеансов</h2>
           </div>
-          <div className="bg-card border border-border rounded-2xl divide-y divide-border overflow-hidden">
-            {prices.map((p) => (
-              <div key={p.name} className="flex items-center justify-between px-6 py-5 hover:bg-muted/50 transition-colors">
-                <div>
-                  <div className="font-medium text-foreground">{p.name}</div>
-                  <div className="text-sm text-muted-foreground">{p.time}</div>
-                </div>
-                <div className="font-display text-2xl text-primary">{p.price}</div>
-              </div>
-            ))}
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-muted/60 border-b border-border">
+                  <th className="text-left px-5 py-3 font-medium text-muted-foreground">Услуга</th>
+                  <th className="text-center px-4 py-3 font-medium text-muted-foreground">Время</th>
+                  <th className="text-right px-5 py-3 font-medium text-muted-foreground">Цена</th>
+                </tr>
+              </thead>
+              <tbody>
+                {priceGroups.map((g) =>
+                  g.rows.map((r, i) => (
+                    <tr key={g.group + i} className="border-b border-border last:border-0 hover:bg-muted/40 transition-colors">
+                      <td className="px-5 py-3 text-foreground">
+                        {i === 0
+                          ? <span className="font-medium">{g.group}</span>
+                          : <span className="text-muted-foreground pl-3 text-xs">↳ {g.group}</span>}
+                      </td>
+                      <td className="px-4 py-3 text-center text-muted-foreground whitespace-nowrap">{r.time}</td>
+                      <td className="px-5 py-3 text-right font-display text-lg text-primary whitespace-nowrap">{r.price}</td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
           </div>
           <p className="text-center text-muted-foreground mt-6 italic">
             и другие виды: тайский, гуа-ша, медовый, стоун...
