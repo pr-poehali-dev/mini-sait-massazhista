@@ -180,7 +180,7 @@ const Index = () => {
           </p>
           <div className="grid sm:grid-cols-3 gap-6 mb-12">
             {[
-              { icon: 'Phone', label: '+7 (900) 123-45-67', sub: 'Звонок и WhatsApp', href: 'tel:+79001234567' },
+              { icon: 'Phone', label: '+375 (25) 626-39-18', sub: 'Звонок и WhatsApp', href: 'tel:+375256263918' },
               { icon: 'MapPin', label: 'Москва, ул. Тихая, 12', sub: 'Уютный кабинет', href: undefined },
               { icon: 'Clock', label: 'Пн–Вс · 9:00–21:00', sub: 'По записи', href: undefined },
             ].map((c) => {
@@ -207,7 +207,7 @@ const Index = () => {
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild className="rounded-full px-8 border-primary/30">
-              <a href="tel:+79001234567">
+              <a href="tel:+375256263918">
                 <Icon name="Phone" size={18} className="mr-2" /> Позвонить
               </a>
             </Button>
