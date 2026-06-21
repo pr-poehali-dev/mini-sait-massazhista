@@ -36,14 +36,21 @@ const services = [
   { icon: 'Leaf', title: 'Тайский массаж', text: 'Древняя техника растяжки и акупрессуры — восстанавливает энергию, гибкость и внутренний баланс.' },
 ];
 
+const DEFAULT_PRICES = [
+  { group: 'Расслабляющий массаж', rows: [{ time: '30 мин', price: '25 руб.' }, { time: '60 мин', price: '50 руб.' }, { time: '90 мин', price: '70 руб.' }] },
+  { group: 'Антицеллюлитный', rows: [{ time: '60 мин', price: '60 руб.' }, { time: '60 мин + обёртывание', price: '110 руб.' }] },
+  { group: 'Баночный массаж', rows: [{ time: '60 мин', price: '50 руб.' }] },
+  { group: 'Массаж лица', rows: [{ time: '15 мин', price: '20 руб.' }] },
+];
+
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [priceGroups, setPriceGroups] = useState<{ group: string; rows: { time: string; price: string }[] }[]>([]);
+  const [priceGroups, setPriceGroups] = useState(DEFAULT_PRICES);
 
   useEffect(() => {
     fetch(PRICES_API)
       .then((r) => r.json())
-      .then((data) => setPriceGroups(groupPrices(data)))
+      .then((data) => { if (data?.length) setPriceGroups(groupPrices(data)); })
       .catch(() => {});
   }, []);
 
