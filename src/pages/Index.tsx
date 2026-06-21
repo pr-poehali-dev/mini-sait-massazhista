@@ -66,7 +66,7 @@ const Index = () => {
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <button onClick={() => scrollTo('home')} className="font-display text-2xl font-semibold tracking-wide text-primary">
+          <button onClick={() => scrollTo('home')} className="font-display text-lg sm:text-2xl font-semibold tracking-wide text-primary">
             Alexandr_by_massage
           </button>
           <nav className="hidden md:flex items-center gap-8">
@@ -96,7 +96,7 @@ const Index = () => {
         <div className="container grid md:grid-cols-2 gap-12 items-center py-16">
           <div className="animate-fade-up">
             <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-6">Место здоровья и спокойствия</p>
-            <h1 className="font-display text-5xl md:text-7xl leading-[1.05] text-primary mb-6">
+            <h1 className="font-display text-3xl sm:text-5xl md:text-7xl leading-[1.05] text-primary mb-6">
               Прикосновение,<br />которое обновляет
             </h1>
             <p className="text-muted-foreground text-lg max-w-md mb-10">
@@ -113,7 +113,7 @@ const Index = () => {
           </div>
           <div className="relative animate-fade-up" style={{ animationDelay: '0.2s' }}>
             <div className="absolute -inset-4 bg-accent/40 rounded-[2rem] rotate-3" />
-            <img src={HERO_IMG} alt="Массажный кабинет" className="relative rounded-[2rem] shadow-xl object-cover w-full h-[420px] md:h-[520px]" />
+            <img src={HERO_IMG} alt="Массажный кабинет" className="relative rounded-[2rem] shadow-xl object-cover w-full h-[280px] sm:h-[420px] md:h-[520px]" />
           </div>
         </div>
       </section>
@@ -123,7 +123,7 @@ const Index = () => {
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="relative order-2 md:order-1">
             <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] -rotate-3" />
-            <img src={ABOUT_IMG} alt="Руки массажиста" className="relative rounded-[2rem] shadow-lg object-cover w-full h-[420px]" />
+            <img src={ABOUT_IMG} alt="Руки массажиста" className="relative rounded-[2rem] shadow-lg object-cover w-full h-[280px] sm:h-[420px]" />
           </div>
           <div className="order-1 md:order-2">
             <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-4">Обо мне</p>
@@ -134,7 +134,7 @@ const Index = () => {
             <p className="text-muted-foreground text-lg mb-8 text-justify">
               В работе использую натуральные масла и индивидуальный подход к каждому клиенту.<br />Моя цель — чтобы после сеанса вы чувствовали себя обновлённым.
             </p>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6">
               {[
                 { n: '20+', t: 'лет опыта' },
                 { n: '★★★★★', t: 'отзывы клиентов' },
@@ -179,30 +179,32 @@ const Index = () => {
             <h2 className="font-display text-4xl md:text-5xl text-primary">Стоимость сеансов</h2>
           </div>
           <div className="bg-card border border-border rounded-2xl overflow-hidden">
+            <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-muted/60 border-b border-border">
-                  <th className="text-left px-5 py-3 font-medium text-muted-foreground">Услуга</th>
-                  <th className="text-center px-4 py-3 font-medium text-muted-foreground">Время</th>
-                  <th className="text-right px-5 py-3 font-medium text-muted-foreground">Цена</th>
+                  <th className="text-left px-3 sm:px-5 py-3 font-medium text-muted-foreground">Услуга</th>
+                  <th className="text-center px-2 sm:px-4 py-3 font-medium text-muted-foreground">Время</th>
+                  <th className="text-right px-3 sm:px-5 py-3 font-medium text-muted-foreground">Цена</th>
                 </tr>
               </thead>
               <tbody>
                 {priceGroups.map((g) =>
                   g.rows.map((r, i) => (
                     <tr key={g.group + i} className="border-b border-border last:border-0 hover:bg-muted/40 transition-colors">
-                      <td className="px-5 py-3 text-foreground">
+                      <td className="px-3 sm:px-5 py-3 text-foreground">
                         {i === 0
                           ? <span className="font-medium">{g.group}</span>
                           : <span className="text-muted-foreground pl-3 text-xs">↳ {g.group}</span>}
                       </td>
-                      <td className="px-4 py-3 text-center text-muted-foreground whitespace-nowrap">{r.time}</td>
-                      <td className="px-5 py-3 text-right font-display text-lg text-primary whitespace-nowrap">{r.price}</td>
+                      <td className="px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap">{r.time}</td>
+                      <td className="px-3 sm:px-5 py-3 text-right font-display text-lg text-primary whitespace-nowrap">{r.price}</td>
                     </tr>
                   ))
                 )}
               </tbody>
             </table>
+            </div>
           </div>
           <p className="text-center text-muted-foreground mt-6 italic">
             и другие виды: тайский, гуа-ша, медовый, стоун...
@@ -240,7 +242,7 @@ const Index = () => {
               );
             })}
           </div>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Button size="lg" asChild className="rounded-full px-8">
               <a href="https://t.me/Athyu2" target="_blank" rel="noopener noreferrer">
                 <Icon name="Send" size={18} className="mr-2" /> Написать в Telegram
