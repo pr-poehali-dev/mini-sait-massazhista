@@ -168,6 +168,9 @@ const Index = () => {
               </div>
             ))}
           </div>
+          <p className="text-center text-muted-foreground mt-6 italic">
+            и другие виды: тайский, гуа-ша, медовый, стоун...
+          </p>
         </div>
       </section>
 
