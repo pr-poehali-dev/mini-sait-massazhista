@@ -45,7 +45,7 @@ const Index = () => {
       <header className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container flex items-center justify-between h-16">
           <button onClick={() => scrollTo('home')} className="font-display text-2xl font-semibold tracking-wide text-primary">
-            Анна · Massage
+            Alexandr_by_massage
           </button>
           <nav className="hidden md:flex items-center gap-8">
             {nav.map((n) => (
@@ -105,7 +105,7 @@ const Index = () => {
           </div>
           <div className="order-1 md:order-2">
             <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-4">Обо мне</p>
-            <h2 className="font-display text-4xl md:text-5xl text-primary mb-6">Анна Соколова</h2>
+            <h2 className="font-display text-4xl md:text-5xl text-primary mb-6">Alexandr_by_massage</h2>
             <p className="text-muted-foreground text-lg mb-5">
               Дипломированный массажист с опытом более 8 лет. Я уверена: настоящее здоровье начинается с расслабления и внимания к телу.
             </p>
@@ -217,7 +217,7 @@ const Index = () => {
 
       <footer className="py-10 border-t border-border bg-secondary/40">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <span className="font-display text-lg text-primary">Анна · Massage</span>
+          <span className="font-display text-lg text-primary">Alexandr_by_massage</span>
           <span>© 2026 · Студия здоровья и спокойствия</span>
         </div>
       </footer>
