@@ -97,7 +97,7 @@ const Index = () => {
           <div className="animate-fade-up">
             <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-6">Место здоровья и спокойствия</p>
             <h1 className="font-display text-5xl md:text-7xl leading-[1.05] text-primary mb-6">
-              Прикосновение,<br />которое лечит
+              Прикосновение,<br />которое обновляет
             </h1>
             <p className="text-muted-foreground text-lg max-w-md mb-10">
               Качественный массаж в атмосфере тишины и заботы. Верните телу гармонию, а мыслям — лёгкость.
