@@ -180,25 +180,36 @@ const Index = () => {
           </p>
           <div className="grid sm:grid-cols-3 gap-6 mb-12">
             {[
-              { icon: 'Phone', label: '+7 (900) 123-45-67', sub: 'Звонок и WhatsApp' },
-              { icon: 'MapPin', label: 'Москва, ул. Тихая, 12', sub: 'Уютный кабинет' },
-              { icon: 'Clock', label: 'Пн–Вс · 9:00–21:00', sub: 'По записи' },
-            ].map((c) => (
-              <div key={c.label} className="bg-card border border-border rounded-2xl p-6">
-                <div className="w-11 h-11 rounded-full bg-accent/40 flex items-center justify-center mx-auto mb-4">
-                  <Icon name={c.icon} size={20} className="text-primary" />
-                </div>
-                <div className="font-medium text-foreground">{c.label}</div>
-                <div className="text-sm text-muted-foreground">{c.sub}</div>
-              </div>
-            ))}
+              { icon: 'Phone', label: '+7 (900) 123-45-67', sub: 'Звонок и WhatsApp', href: 'tel:+79001234567' },
+              { icon: 'MapPin', label: 'Москва, ул. Тихая, 12', sub: 'Уютный кабинет', href: undefined },
+              { icon: 'Clock', label: 'Пн–Вс · 9:00–21:00', sub: 'По записи', href: undefined },
+            ].map((c) => {
+              const Wrapper = c.href ? 'a' : 'div';
+              return (
+                <Wrapper
+                  key={c.label}
+                  {...(c.href ? { href: c.href } : {})}
+                  className={`bg-card border border-border rounded-2xl p-6 block ${c.href ? 'hover:shadow-lg transition-shadow cursor-pointer' : ''}`}
+                >
+                  <div className="w-11 h-11 rounded-full bg-accent/40 flex items-center justify-center mx-auto mb-4">
+                    <Icon name={c.icon} size={20} className="text-primary" />
+                  </div>
+                  <div className="font-medium text-foreground">{c.label}</div>
+                  <div className="text-sm text-muted-foreground">{c.sub}</div>
+                </Wrapper>
+              );
+            })}
           </div>
           <div className="flex justify-center gap-4">
-            <Button size="lg" className="rounded-full px-8">
-              <Icon name="Send" size={18} className="mr-2" /> Написать в Telegram
+            <Button size="lg" asChild className="rounded-full px-8">
+              <a href="https://t.me/your_username" target="_blank" rel="noopener noreferrer">
+                <Icon name="Send" size={18} className="mr-2" /> Написать в Telegram
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 border-primary/30">
-              <Icon name="Phone" size={18} className="mr-2" /> Позвонить
+            <Button size="lg" variant="outline" asChild className="rounded-full px-8 border-primary/30">
+              <a href="tel:+79001234567">
+                <Icon name="Phone" size={18} className="mr-2" /> Позвонить
+              </a>
             </Button>
           </div>
         </div>
