@@ -106,10 +106,10 @@ const Index = () => {
           <div className="order-1 md:order-2">
             <p className="uppercase tracking-[0.3em] text-xs text-primary/70 mb-4">Обо мне</p>
             <h2 className="font-display text-4xl md:text-5xl text-primary mb-6">Александр Неволин</h2>
-            <p className="text-muted-foreground text-lg mb-5">
+            <p className="text-muted-foreground text-lg mb-5 text-justify">
               Дипломированный массажист с опытом более 20 лет. Убеждён — настоящее здоровье начинается с расслабления и внимания к телу.
             </p>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-muted-foreground text-lg mb-8 text-justify">
               В работе использую натуральные масла и индивидуальный подход к каждому клиенту.<br />Моя цель — чтобы после сеанса вы чувствовали себя обновлённым.
             </p>
             <div className="grid grid-cols-3 gap-6">
