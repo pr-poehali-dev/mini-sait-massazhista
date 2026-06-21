@@ -115,8 +115,8 @@ const Index = () => {
             <div className="grid grid-cols-3 gap-6">
               {[
                 { n: '20+', t: 'лет опыта' },
-                { n: '1200+', t: 'довольных гостей' },
-                { n: '6', t: 'видов массажа' },
+                { n: '★★★★★', t: 'отзывы клиентов' },
+                { n: '♻', t: 'постоянные клиенты' },
               ].map((s) => (
                 <div key={s.t}>
                   <div className="font-display text-4xl text-primary">{s.n}</div>
