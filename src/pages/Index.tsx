@@ -247,6 +247,11 @@ const Index = () => {
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild className="rounded-full px-8 border-primary/30">
+              <a href="viber://chat?number=%2B375256263918" target="_blank" rel="noopener noreferrer">
+                <Icon name="MessageCircle" size={18} className="mr-2" /> Написать в Viber
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="rounded-full px-8 border-primary/30">
               <a href="tel:+375256263918">
                 <Icon name="Phone" size={18} className="mr-2" /> Позвонить
               </a>
