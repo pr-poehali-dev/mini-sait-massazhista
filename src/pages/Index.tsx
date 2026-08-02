@@ -192,11 +192,11 @@ const Index = () => {
                     <tr key={g.group + i} className="border-b border-border last:border-0 hover:bg-muted/40 transition-colors">
                       <td className="px-3 sm:px-5 py-3 text-foreground">
                         {i === 0
-                          ? <span className="font-display font-semibold text-lg">{g.group}</span>
+                          ? <span className="font-display font-bold text-lg">{g.group}</span>
                           : <span className="text-muted-foreground pl-3 text-xs">↳ {g.group}</span>}
                       </td>
-                      <td className={`px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-display font-semibold text-lg' : ''}`}>{r.time}</td>
-                      <td className={`px-3 sm:px-5 py-3 text-right text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-display font-semibold text-lg' : ''}`}>{r.price}</td>
+                      <td className={`px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-display font-bold text-lg' : ''}`}>{r.time}</td>
+                      <td className={`px-3 sm:px-5 py-3 text-right text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-display font-bold text-lg' : ''}`}>{r.price}</td>
                     </tr>
                   ))
                 )}
