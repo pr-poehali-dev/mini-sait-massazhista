@@ -6,6 +6,12 @@ const PRICES_API = 'https://functions.poehali.dev/8bf22f20-15fa-4336-b6e9-cb34ad
 
 interface PriceRow { group_name: string; time_label: string; price: string; }
 
+function splitNumber(text: string) {
+  const match = text.match(/^(\d+)(.*)$/);
+  if (!match) return { num: null, rest: text };
+  return { num: match[1], rest: match[2] };
+}
+
 function groupPrices(rows: PriceRow[]) {
   const map: Record<string, { time: string; price: string }[]> = {};
   rows.forEach((r) => {
@@ -195,8 +201,16 @@ const Index = () => {
                           ? <span className="font-display font-bold text-lg">{g.group}</span>
                           : <span className="text-muted-foreground pl-3 text-xs">↳ {g.group}</span>}
                       </td>
-                      <td className={`px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-display font-bold text-lg' : ''}`}>{r.time}</td>
-                      <td className={`px-3 sm:px-5 py-3 text-right text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-display font-bold text-lg' : ''}`}>{r.price}</td>
+                      <td className={`px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-display font-bold text-lg' : ''}`}>
+                        {i === 0
+                          ? (() => { const { num, rest } = splitNumber(r.time); return num ? <><span className="font-sans font-semibold">{num}</span>{rest}</> : r.time; })()
+                          : r.time}
+                      </td>
+                      <td className={`px-3 sm:px-5 py-3 text-right text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-display font-bold text-lg' : ''}`}>
+                        {i === 0
+                          ? (() => { const { num, rest } = splitNumber(r.price); return num ? <><span className="font-sans font-semibold">{num}</span>{rest}</> : r.price; })()
+                          : r.price}
+                      </td>
                     </tr>
                   ))
                 )}
