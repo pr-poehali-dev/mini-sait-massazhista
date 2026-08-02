@@ -198,15 +198,15 @@ const Index = () => {
                     <tr key={g.group + i} className="border-b border-border last:border-0 hover:bg-muted/40 transition-colors">
                       <td className="px-3 sm:px-5 py-3 text-foreground">
                         {i === 0
-                          ? <span className="font-display font-bold text-[16pt]">{g.group}</span>
+                          ? <span className="font-sans font-bold text-[16pt]">{g.group}</span>
                           : <span className="font-sans text-muted-foreground pl-3 text-[10pt]">↳ {g.group}</span>}
                       </td>
-                      <td className={`px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap font-sans ${i === 0 ? 'font-display font-bold text-[12pt]' : 'text-[10pt]'}`}>
+                      <td className={`px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap font-sans ${i === 0 ? 'font-bold text-[12pt]' : 'text-[10pt]'}`}>
                         {i === 0
                           ? (() => { const { num, rest } = splitNumber(r.time); return num ? <><span className="font-sans font-semibold">{num}</span>{rest}</> : r.time; })()
                           : r.time}
                       </td>
-                      <td className={`px-3 sm:px-5 py-3 text-right text-muted-foreground whitespace-nowrap font-sans ${i === 0 ? 'font-display font-bold text-[12pt]' : 'text-[10pt]'}`}>
+                      <td className={`px-3 sm:px-5 py-3 text-right text-muted-foreground whitespace-nowrap font-sans ${i === 0 ? 'font-bold text-[12pt]' : 'text-[10pt]'}`}>
                         {i === 0
                           ? (() => { const { num, rest } = splitNumber(r.price); return num ? <><span className="font-sans font-semibold">{num}</span>{rest}</> : r.price; })()
                           : r.price}
