@@ -196,7 +196,7 @@ const Index = () => {
                           : <span className="text-muted-foreground pl-3 text-xs">↳ {g.group}</span>}
                       </td>
                       <td className={`px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-semibold' : ''}`}>{r.time}</td>
-                      <td className={`px-3 sm:px-5 py-3 text-right font-display text-lg text-primary whitespace-nowrap ${i === 0 ? 'font-bold' : ''}`}>{r.price}</td>
+                      <td className={`px-3 sm:px-5 py-3 text-right text-muted-foreground whitespace-nowrap ${i === 0 ? 'font-semibold' : ''}`}>{r.price}</td>
                     </tr>
                   ))
                 )}
