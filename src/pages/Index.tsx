@@ -199,7 +199,7 @@ const Index = () => {
                       <td className="px-3 sm:px-5 py-3 text-foreground">
                         {i === 0
                           ? <span className="font-display font-bold text-[16pt]">{g.group}</span>
-                          : <span className="font-sans text-muted-foreground pl-3 text-[12pt]">↳ {g.group}</span>}
+                          : <span className="font-sans text-muted-foreground pl-3 text-[10pt]">↳ {g.group}</span>}
                       </td>
                       <td className={`px-2 sm:px-4 py-3 text-center text-muted-foreground whitespace-nowrap font-sans text-[12pt] ${i === 0 ? 'font-display font-bold' : ''}`}>
                         {i === 0
